@@ -1,0 +1,2 @@
+# astrbot_plugin_time_sense
+AstrBot 插件：给模型一个获取当前现实时间的函数工具，由模型自行决定何时调用
