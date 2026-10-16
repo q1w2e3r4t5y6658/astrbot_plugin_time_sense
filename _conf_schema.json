@@ -1,0 +1,17 @@
+{
+  "timezone": {
+    "type": "string",
+    "description": "时区（IANA 名称）",
+    "hint": "默认 Asia/Shanghai。AstrBot 容器一般是 UTC，必须在这里指定用户所在时区，否则时间会差几小时",
+    "default": "Asia/Shanghai"
+  },
+  "utc_offset_hours": {
+    "type": "float",
+    "description": "时区名不可用时的回退 UTC 偏移（小时）",
+    "hint": "容器里没有 tzdata 时用这个兜底，默认 +8",
+    "default": 8
+  },
+  "time_format": { "type": "string", "description": "时间格式（strftime 语法）", "default": "%Y-%m-%d %H:%M:%S" },
+  "include_weekday": { "type": "bool", "description": "返回内容里带上星期", "default": true },
+  "include_period": { "type": "bool", "description": "返回内容里带上「上午/下午/深夜」这类时段", "default": true }
+}

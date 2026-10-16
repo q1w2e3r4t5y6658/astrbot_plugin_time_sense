@@ -1,0 +1,13 @@
+name: astrbot_plugin_time_sense
+display_name: 时间感知（现实时间工具）
+author: q1w2e3r4t5y6658
+version: 1.0.0
+short_desc: 给模型一个「查现在时间」的函数工具，由模型自己决定何时调用
+desc: 注册一个 get_current_time 函数工具，让模型在需要时主动查询当前的现实日期与时间（含星期、时段、时区）。自动做时区换算（AstrBot 容器通常是 UTC，容易出现 8 小时偏差）。
+repo: https://github.com/q1w2e3r4t5y6658/astrbot_plugin_time_sense
+astrbot_version: ">=4.0,<5"
+support_platforms:
+  - aiocqhttp
+tags:
+  - tool
+  - time
