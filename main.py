@@ -37,7 +37,7 @@ _WEEKDAYS = ("星期一", "星期二", "星期三", "星期四", "星期五", "�
     "astrbot_plugin_time_sense",
     "q1w2e3r4t5y6658",
     "给模型一个获取当前现实时间的函数工具，由模型自行决定何时调用",
-    "1.0.0",
+    "1.0.1",
     "https://github.com/q1w2e3r4t5y6658/astrbot_plugin_time_sense",
 )
 class TimeSensePlugin(Star):
@@ -109,11 +109,11 @@ class TimeSensePlugin(Star):
     # ------------------------------------------------------------------ #
     @filter.llm_tool(name=DEFAULT_TOOL_NAME)
     async def get_current_time(self, event: AstrMessageEvent):
-        """获取当前的现实日期与时间。
+        """获取当前的现实日期与时间（这是你唯一可靠的时间来源）。
 
-        当用户询问现在几点、今天几号、星期几，或者你需要知道当前真实时间时调用：
-        判断早中晚、计算时间差、涉及「今天/明天/昨天/最近/刚才」这类相对时间，
-        以及任何需要锚定「现在」的场景。
+        只要涉及「现在 / 今天 / 几点 / 几号 / 星期几 / 早中晚 / 多久 / 刚才 / 最近 /
+        今天明天昨天」，就**必须调用本工具**，然后照它返回的内容回答。
+        不要凭记忆或推测报时间 —— 猜出来的时间是错的。
         """
         now, tz_label = self._now()
         fmt = str(self._cfg("time_format", DEFAULT_FORMAT) or DEFAULT_FORMAT)
